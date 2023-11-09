@@ -1,4 +1,3 @@
-//ALL THE FOLLOWING IS TEMPLATE CODE
 #include "vex.h"
 
 using namespace vex;
@@ -9,18 +8,21 @@ using code = vision::code;
 brain  Brain;
 
 // VEXcode device constructors
-motor leftMotorA = motor(PORT1, ratio18_1, false);
-motor leftMotorB = motor(PORT10, ratio18_1, false);
-motor_group LeftDriveSmart = motor_group(leftMotorA, leftMotorB);
+motor leftMotorA = motor(PORT7, ratio18_1, false);
+motor leftMotorB = motor(PORT8, ratio18_1, false);
+motor leftMotorC = motor(PORT9, ratio18_1, false);
+motor leftMotorD = motor(PORT10, ratio18_1, false);
+motor_group LeftDrive = motor_group(leftMotorA, leftMotorB, leftMotorC, leftMotorD);
 
-motor rightMotorA = motor(PORT11, ratio18_1, true); 
-motor rightMotorB = motor(PORT20, ratio18_1, true); 
-motor_group RightDriveSmart = motor_group(rightMotorA, rightMotorB);
+motor rightMotorA = motor(PORT1, ratio18_1, true); 
+motor rightMotorB = motor(PORT2, ratio18_1, true); 
+motor rightMotorC = motor(PORT3, ratio18_1, true);
+motor rightMotorD = motor(PORT4, ratio18_1, true);
+motor_group RightDrive = motor_group(rightMotorA, rightMotorB, rightMotorC, rightMotorD);
 
-drivetrain Drivetrain = drivetrain(LeftDriveSmart, RightDriveSmart, 319.19, 295, 40, mm, 1);
-motor ArmMotor = motor(PORT3, ratio18_1, false);
-motor ClawMotor = motor(PORT8, ratio18_1, false);
-
+drivetrain Drivetrain = drivetrain(LeftDrive, RightDrive, 319.19, 295, 40, mm, 1); //CHANGE THIS?
+motor intakeL = motor(PORT11, ratio18_1, true);
+motor intakeR = motor(PORT20, ratio18_1, false);
 // VEXcode generated functions
 
 
