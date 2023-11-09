@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------------------*/
 /*                                                                            */
 /*    Module:       main.cpp                                                  */
-/*    Author:       Wendy                                                     */
+/*    Author:       Wendy, Kathy, Aaron                                       */
 /*    Created:      11/9/2023, 2:11:15 PM                                     */
 /*    Description:  V5 project                                                */
 /*                                                                            */
@@ -26,4 +26,3 @@ int main() {
         this_thread::sleep_for(10);
     }
 }
-//removed comment -k
