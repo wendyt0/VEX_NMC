@@ -23,6 +23,7 @@ motor_group RightDrive = motor_group(rightMotorA, rightMotorB, rightMotorC, righ
 motor intakeL = motor(PORT20, ratio18_1, true);
 motor intakeR = motor(PORT11, ratio18_1, false);
 
+controller Controller1 = controller();
 // VEXcode generated functions
 
 
