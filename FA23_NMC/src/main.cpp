@@ -72,25 +72,23 @@ void autonomous(void) {
 
 void usercontrol(void) {
   // User control code here, inside the loop
-  // Make the drivetrain move forward at 50% power
-    LeftDrive.spin(directionType::fwd, 50, velocityUnits::pct);
-    RightDrive.spin(directionType::fwd, 50, velocityUnits::pct);
-
-    // Allow the robot to move for some time (e.g., 3 seconds)
-    this_thread::sleep_for(3000);
-
-    // Stop the drivetrain
-    LeftDrive.stop();
-    RightDrive.stop();
+  // CODE BELOW WAS USED TO TEST MOTORS
+  // make the drivetrain move forward at 50% power for 3 second then stop
+    // LeftDrive.spin(directionType::fwd, 50, velocityUnits::pct);
+    // RightDrive.spin(directionType::fwd, 50, velocityUnits::pct);
+    // this_thread::sleep_for(3000);
+    // LeftDrive.stop();
+    // RightDrive.stop();
   while (1) {
     // This is the main execution loop for the user control program.
     // Each time through the loop your program should update motor + servo
     // values based on feedback from the joysticks.
-
-    // ........................................................................
-    // Insert user code here. This is where you use the joystick values to
-    // update your motors, etc.
-    // ........................................................................
+    // CODE BELOW SETS OUR CONTROLLER TO TANK DRIVE 
+    
+    int leftValue = Controller1.Axis3.position();
+    int rightValue = Controller1.Axis2.position();
+    LeftDrive.spin(directionType::fwd, leftValue, velocityUnits::pct);
+    RightDrive.spin(directionType::fwd, rightValue, velocityUnits::pct);
 
     wait(20, msec); // Sleep the task for a short amount of time to
                     // prevent wasted resources.
